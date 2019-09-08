@@ -1,0 +1,30 @@
+name laidout-default.keys
+modifiers #warning: for now modifiers block is a hint only! will not affect parsing!
+  Shift   +
+  Control ^
+  Alt     &
+  Meta    ~
+area ObjectInterface
+area NUpInterface
+area AlignInterface
+area LaidoutViewport
+area ViewWindow
+area HeadWindow
+area SpreadInterface
+area SpreadEditor
+area SignatureInterface
+area HedronWindow
+area ImageInterface
+area GradientInterface
+area PathInterface
+area CaptionInterface
+area TextOnPathInterface
+area ColorPatchInterface
+area ImagePatchInterface
+area EngraverFillInterface
+area CloneInterface
+area PaperInterface
+area NodeInterface
+area ObjectFilterInterface
+area DelauneyInterface
+area GraphicalShell

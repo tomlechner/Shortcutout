@@ -1,0 +1,514 @@
+#
+# Laidout shortcuts
+#
+
+modifiers #warning: for now modifiers block is a hint only! will not affect parsing!
+  Shift   +
+  Control ^
+  Alt     &
+  Meta    ~
+area ObjectInterface
+  +D         Decorations         #Toggle decorations
+  n          Nup                 #Distribute selected objects in rows and columns
+  +N         Rectify             #Normalize scale, clear skew and rotation
+  c          Constrain           #Toggle drag constraint
+  +>         ExpandHandle        #Expand handle size
+  +<         ContractHandle      #Contract handle size
+  r          RotateCW            #Rotate clockwise
+  +R         RotateCCW           #Rotate counter clockwise
+  h          FlipH               #Flip horizontally
+  v          FlipV               #Flip vertically
+  f          FlipToggleShow      #Toggle showing flip controls
+  +^&G       Group               #Group any, even if only one selected
+  ^g         ToggleGroup         #Group if many selected, or ungroup if only one group selected
+  +^G        Ungroup             #Ungroup any selected that are groups
+  a          Align               #Align selected objects
+  ^space     CloneB              #Clone objects, if button down
+  space      DuplicateB          #Duplicate objects, if button down
+  &p         Parent              #Parent selected objects to last selected
+  +&P        Unparent            #Unparent selected objects from their immediate parents
+  none       Normalize           #Normalize scale, clear skew
+  none       MoveCenter          #Move rotation center to common points
+  none       Clone               #Clone objects
+  none       Duplicate           #Duplicate objects
+area NUpInterface
+  +D         Decorations         #Toggle decorations
+  n          Normalize           #Normalize scale, clear skew
+  +N         Rectify             #Normalize scale, clear skew and rotation
+  c          Constrain           #Toggle drag constraint
+  +>         ExpandHandle        #Expand handle size
+  +<         ContractHandle      #Contract handle size
+  r          RotateCW            #Rotate clockwise
+  +R         RotateCCW           #Rotate counter clockwise
+  h          FlipH               #Flip horizontally
+  v          FlipV               #Flip vertically
+  f          FlipToggleShow      #Toggle showing flip controls
+  Enter      ToggleApply         #Toggle apply
+  Left       NextDir             #Next direction type
+  Right      PrevDir             #Previous direction type
+  none       MoveCenter          #Move rotation center to common points
+  none       NextLayoutType      #Next layout type
+  none       PrevLayoutType      #Previous layout type
+area AlignInterface
+  Enter      ToggleApply         #Toggle applying alignment
+  +C         CenterV             #Align centers vertically
+  c          CenterH             #Align centers horizontally
+  x          VSnap               #Make snap vertical, layout horizontal
+  y          HSnap               #Make snap horizontal, layout vertical
+  r          Right               #Align right edges horizontally
+  l          Left                #Align left edges horizontally
+  t          Top                 #Align top edges vertically
+  b          Bottom              #Align bottom edges vertically
+  0          ClampBoundaries     #Clamp boundaries to fill path
+  [          LeftBoundLess       #Move left bound left
+  ^[         LeftBoundMore       #Move left bound right
+  ]          RightBoundLess      #Move right bound left
+  ^]         RightBoundMore      #Move right bound right
+  {          LessStep            #Scale down the key step
+  }          MoreStep            #Scale up the key step
+  p          EditPath            #Edit the path
+  Up         FinalUp10           #Shift final alignment by 10
+  +Up        FinalUp1            #Shift final alignment by 1
+  ^Up        FinalUp_1           #Shift final alignment by .1
+  +^Up       FinalUp_01          #Shift final alignment by .01
+  Down       FinalDown10         #Shift final alignment by -10
+  +Down      FinalDown1          #Shift final alignment by -1
+  ^Down      FinalDown_1         #Shift final alignment by -.1
+  +^Down     FinalDown_01        #Shift final alignment by -.01
+  Right      AlignUp10           #Shift snap alignment by 10
+  +Right     AlignUp1            #Shift snap alignment by 1
+  ^Right     AlignUp_1           #Shift snap alignment by .1
+  +^Right    AlignUp_01          #Shift snap alignment by .01
+  Left       AlignDown10         #Shift snap alignment by -10
+  +Left      AlignDown1          #Shift snap alignment by -1
+  ^Left      AlignDown_1         #Shift snap alignment by -.1
+  +^Left     AlignDown_01        #Shift snap alignment by -.01
+  f          ToggleFinal         #Change the final layout type
+  +F         ToggleFinalR        #Change the final layout type
+  a          ToggleAlign         #Change the snap layout type
+  +A         ToggleAlignR        #Change the snap layout type
+  m          ToggleShift         #Change the shift type
+  +M         ToggleShiftR        #Change the shift type
+area LaidoutViewport
+  ++         ZoomIn              #Zoom in
+  =          ZoomIn              #Zoom in
+  -          ZoomOut             #Zoom out
+  space      CenterDrawing       #Center drawing
+  +^space    ResetView           #Reset the view, center and align axes
+  ^space     ResetView           #Reset the view, center and align axes
+  .          NextObject          #Select next object
+  ,          PreviousObject      #Select previous object
+  Bksp       DeleteObject        #Delete current object
+  Del        DeleteObject        #Delete current object
+  j          ShiftLeft           #Shift view left
+  l          ShiftRight          #Shift view right
+  i          ObjectInfo          #Toggle showing object information
+  k          ShiftDown           #Shift view Down
+  ^[         IncShift            #Increase view shift amount
+  ^]         DecShift            #Decrease view shift amount
+  ^z         Undo                #Undo
+  ^y         Redo                #Redo
+  +^Z        Redo                #Redo
+  Tab        NextObject          #Select next object
+  +Tab       PreviousObject      #Select previous object
+  +^A        DeselectAll         #Deselect all
+  6          CenterDrawing       #Center drawing
+  4          CenterObject        #Center on current object
+  5          ZoomToPage          #Zoom to the current page
+  +space     ZoomToPage          #Zoom to the current page
+  +^G        GrabColor           #Grab color
+  +l         ToggleShow          #Toggle show state
+  m          MoveObjs            #Move objects
+  PageUp     MoveObjUp           #Move object up within layer
+  PageDown   MoveObjDown         #Move object down within layer
+  Home       MoveObjFirst        #Move object to first in layer
+  End        MoveObjLast         #Move object to last in layer
+  +D         ToggleDrawFlags     #Toggle drawing flags
+  ^r         ForceRemap          #Force reapplication of any alignment rules of objects in current spread
+  none       CenterReal          #Center the real origin in the viewport
+  none       ShiftUp             #Shift view Up
+area ViewWindow
+  Esc        ObjectTool          #Switch to object tool
+  ^s         Save                #Save document
+  +^S        SaveAs              #Save as
+  ^n         NewDoc              #New document
+  t          NextTool            #Next tool
+  +T         PreviousTool        #Previous tool
+  +>         NextPage            #Next page
+  +<         PreviousPage        #Previous page
+  F1         Help                #Help
+  F2         About               #About Laidout
+  F3         SpreadEditor        #Popup a spread editor
+  F4         EditImposition      #Edit current imposition
+  F5         PathTool            #Change to path tool
+  F6         ImageTool           #Change to image tool
+  F7         GradientTool        #Change to gradient tool
+  F8         MeshGradientTool    #Change to mesh gradient tool
+  F9         EngraverTool        #Change to engraver fill tool
+  /          Prompt              #Popup the graphical shell
+area HeadWindow
+  ^q         Quit                #Quit Laidout
+  ^o         OpenDoc             #Open a document
+  +^K        OpenKeys            #Open shortcut key editor
+area SpreadInterface
+  a          ToggleSelect        #Select all or none
+  ^m         SelectSimilar       #Select all pages with the same kind of markers
+  space      Center              #Center
+  l          LabelPos            #Move label position
+  c          ToggleColor         #Toggle color among defined colors
+  +C         ToggleColorR        #Toggle color among defined colors
+  m          ToggleMark          #Toggle mark type
+  +M         ToggleMarkR         #Toggle mark type
+  t          Thumbs              #Toggle showing thumbnails
+  +A         Arrange             #Toggle arrangement type
+  +^A        RefreshArrange      #Refresh with current arrangement type
+  p          AddPage             #Add a page after current
+  +P         AddPageBefore       #Add a page before current
+  Del        Deletepages         #Delete pages
+  Bksp       Deletepages         #Delete pages
+  h          Hidepages           #Toggle hiding of pages
+area SpreadEditor
+  t          NextTool            #Next tool
+  +T         PreviousTool        #Previous tool
+area SignatureInterface
+  d          Decorations         #Toggle decorations
+  p          Thumbs              #Toggle showing of page thumbnails
+  space      Center              #Center view
+  Up         Center              #Center view
+  Down       CenterStacks        #Center on stack arrangement area
+  Left       NextFold            #Select next fold
+  Right      PreviousFold        #Select previous fold
+  ^i         InsetMask           #Toggle which inset to change
+  i          InsetInc            #Increment inset
+  +I         InsetDec            #Decrement inset
+  g          GapInc              #Increment gap
+  +G         GapDec              #Decrement gap
+  x          TileXInc            #Increase number of tiles horizontally
+  +X         TileXDec            #Decrease number of tiles horizontally
+  y          TileYInc            #Increase number of tiles vertically
+  +Y         TileYDec            #Decrease number of tiles vertically
+  v          NumFoldsVInc        #Increase number of vertical folds
+  +V         NumFoldsVDec        #Decrease number of vertical folds
+  h          NumFoldsHInc        #Increase number of horizontal folds
+  +H         NumFoldsHDec        #Decrease number of horizontal folds
+  b          BindingEdge         #Next binding edge
+  +B         BindingEdgeR        #Previous binding edge
+  u          PageOrientation     #Change page orientation
+  ^t         TrimMask            #Toggle which trim to change
+  t          TrimInc             #Increase trim value
+  +T         TrimDec             #Decrease trim value
+  ^m         MarginMask          #Toggle which margin to change
+  m          MarginInc           #Increase margin value
+  +M         MarginDec           #Decrease margin value
+area HedronWindow
+  h          Help                #Display help
+  F1         Help                #Display help
+  p          TogglePapers        #Toggle paper overlay
+  ^p         Hedron              #Load new polyhedron
+  ^i         Image               #Load image
+  `          Toggle mode         #Toggle between net and solid modes
+  ^r         Render              #Render
+  ^s         Save                #Save
+  +^S        SaveAs              #Save as
+  +D         ResetNets           #Delete all defined nets
+  +A         TotalUnwrap         #Totally unwrap
+  [          ThickenLines        #Thicken seam and path indicators
+  ]          ThinLines           #Thin seam and path indicators
+  n          DrawSeams           #Toggle drawing seams
+  t          ToggleTexture       #Toggle using texture
+  l          DrawEdges           #Toggle drawing edges
+  m          RenderMode          #Toggle render mode
+  c          Camera              #Select next camera
+  Left       PanLeft             #Pan camera left
+  Right      PanRight            #Pan camera right
+  Up         PanUp               #Pan camera up
+  Down       PanDown             #Pan camera down
+  ^Left      CameraLeft          #Move camera left
+  ^Right     CameraRight         #Move camera right
+  +^Up       CameraUp            #Move camera up
+  +^Down     CameraDown          #Move camera down
+  ^Up        CameraForward       #Move camera forward
+  ^Down      CameraBack          #Move camera back
+  +^Left     CameraRotate        #Rotate camera clockwise
+  +^Right    CameraRotateCC      #Rotate camera counterclockwise
+  w          NextFace            #Select next face
+  v          PrevFace            #Select previous face
+  =          NextObject          #Select next object
+  x          ObjectPlusX         #Move object in its positive x direction
+  +X         ObjectMinusX        #Move object in its negative x direction
+  y          ObjectPlusY         #Move object in its positive y direction
+  +Y         ObjectMinusY        #Move object in its negative y direction
+  z          ObjectPlusZ         #Move object in its positive z direction
+  +Z         ObjectMinusZ        #Move object in its negative z direction
+  ^x         ObjectRotateX       #Rotate object around x axis
+  +^X        ObjectRotateXr      #Rotate object around x axis the other way
+  ^y         ObjectRotateY       #Rotate object around y axis
+  +^Y        ObjectRotateYr      #Rotate object around y axis the other way
+  ^z         ObjectRotateZ       #Rotate object around z axis
+  +^Z        ObjectRotateZr      #Rotate object around z axis the other way
+  0          ScaleUp             #Scale object up
+  9          ScaleDown           #Scale object down
+  space      ResetView           #Make camera point at object from a reasonable distance
+  ^e         ToggleStereo        #Toggle viewing in crosseye stereo, straight stereo, or no stereo
+area ImageInterface
+  n          Normalize           #Normalize
+  +N         Rectify             #Clear aspect and rotation
+  d          Decorations         #Toggle decorations
+  f          Labels              #Toggle labels
+  h          FlipHorizontal      #Flip horizontally
+  v          FlipVertical        #Flip vertically
+  Enter      ImageInfo           #Edit image info
+area GradientInterface
+  Left       SelectNext          #Select next
+  Right      SelectPrev          #Select previous
+  d          Decorations         #Toggle decorations
+  f          FlipColors          #Flip order of colors
+  l          Linear              #Convert to linear gradient
+  r          Radial              #Convert to Radial gradient
+  a          Select              #Select all, or deselect
+  Del        Delete              #Delete
+  Bksp       Delete              #Delete
+area PathInterface
+  Up         HandlePoint         #Switch between handle and vertex
+  +Up        HandlePointR        #Switch between handle and vertex
+  o          Pathop              #Change path operator
+  +^         ToggleAbsAngle      #Toggle absolute angles in subpaths
+  +F         ToggleFillRule      #Toggle fill rule
+  f          ToggleFill          #Toggle fill
+  s          ToggleStroke        #Toggle showing stroke
+  x          ColorDest           #Send colors to fill or to stroke
+  Right      RollNext            #Select next points
+  Left       RollPrev            #Select previous points
+  n          AddAfter            #Toggle add after
+  p          PointType           #Change point type
+  a          Select              #Select all or deselect
+  +A         SelectInPath        #Select all in path or deselect
+  c          ToggleClosed        #Toggle closed
+  d          Decorations         #Toggle decorations
+  +B         NewPath             #Start a totally new path object
+  b          NewSubpath          #Start a new subpath
+  +_         ToggleOutline       #Toggle indicating outlines (DEBUGGING)
+  +|         ToggleBaseline      #Toggle indicating base line references
+  w          ToggleWeights       #Toggle editing of weights along lines
+  l          Wider               #Thicken the line
+  +L         Thinner             #Thin the line
+  ^l         WidthStep           #Change how much change for width changes
+  +^L        WidthStepR          #Change how much change for width changes
+  0          Circle              #Arrange points in a circle
+  +R         Rect                #Arrange points in a rectangle
+  r          Reverse             #Reverse direction of current path
+  Del        Delete              #Delete selected points
+  Bksp       Delete              #Delete selected points
+  v          FlipVertically      #Flip selected points vertically
+  h          FlipHorizontally    #Flip selected points horizontally
+  +^_        ApplyOffset         #Apply offset to current paths
+  +^|        ResetOffset         #Make offset values (if any) be 0 of current paths
+  ^\         MakeStraight        #Make segments of current points be straight
+  \          MakeBezStraight     #Make segments of current points be straight with bezier handles
+  +<         ResetAngle          #Make weight angles be zero, and set to not absolute angles
+area CaptionInterface
+  ^c         Copy                #Copy
+  ^v         Paste               #Paste
+  ^l         LeftJustify         #Left Justify
+  ^e         CenterJustify       #Center Justify
+  ^r         RightJustify        #Right Justify
+  ^t         TopJustify          #Top Justify
+  ^m         MiddleJustify       #Middle Justify
+  +^B        BaselineJustify     #Baseline Justify
+  ^b         BottomJustify       #Bottom Justify
+  +^D        ShowBaselines       #Show Baselines
+  ^d         Decorations         #Toggle Decorations
+  ^i         InsertChar          #Insert Character
+  ^j         CombineChars        #Join Characters if possible
+  +^P        ConvertToPaths      #Convert to path object, but keep the old object
+  none       Direction           #Toggle Direction
+area TextOnPathInterface
+  ^k         Kern                #Decrease kern
+  +^K        KernR               #Increase kern
+  ^b         BaselineUp          #Move baseline up
+  +^B        BaselineDown        #Move baseline up
+  ^l         OffsetInc           #Move line start forward
+  +^L        OffsetDec           #Move line start backward
+  ^p         EditPath            #Edit the path
+  +^P        ConvertToPath       #Convert to path object
+  +^D        ToggleDirection     #Toggle basic direction of text
+  ^v         Paste               #Paste text
+area ColorPatchInterface
+  m          RenderMode          #Render mode
+  o          RecurseInc          #Increment screen recursion
+  +O         RecurseDec          #Decrement screen recursion
+  j          SmoothEdit          #Toggle smooth editing
+  b          MeshType            #Toggle mesh type
+  +B         MeshTypeR,          #Toggle mesh type in reverse
+  a          Select              #Select all or deselect
+  y          ConstrainY          #Constrain to vertical movements
+  x          ConstrainX          #Constrain to horizontal movements
+  +^R        RowDivInc           #Increment row subdivisions
+  ^r         RowDicDec           #Decrement row subdivisions
+  +^C        ColDivInc           #Increment row subdivisions
+  ^c         ColDivDec           #Decrement row subdivisions
+  s          Subdivide           #Subdivide
+  r          SubdivideRows       #Subdivide rows
+  c          SubdivideCols       #Subdivide columns
+  z          Rectify             #Zap back to a rectangle
+  d          Decorations         #Toggle decorations
+  w          CircleWarp          #Make circle
+  1          SelectCorners       #Select corners
+  2          SelectMids          #Select middle controls
+  3          SelectEdgeMids      #Select edge controls
+  4          SelectVerticalEdgeMids#Select vertical edge controls
+  5          SelectHorizontalEdgeMids#Select horizontal edge controls
+  6          SelectAround        #Select points around current points
+  +V         SelectAllVertically #Select all vertically
+  v          SelectMoreVertically#Select next points vertically
+  +H         SelectAllHorizontally#Select all horizontally
+  h          SelectMoreHorizontally#Select next points horizontally
+area ImagePatchInterface
+  m          RenderMode          #Render mode
+  o          RecurseInc          #Increment screen recursion
+  +O         RecurseDec          #Decrement screen recursion
+  j          SmoothEdit          #Toggle smooth editing
+  b          MeshType            #Toggle mesh type
+  +B         MeshTypeR,          #Toggle mesh type in reverse
+  a          Select              #Select all or deselect
+  y          ConstrainY          #Constrain to vertical movements
+  x          ConstrainX          #Constrain to horizontal movements
+  +^R        RowDivInc           #Increment row subdivisions
+  ^r         RowDicDec           #Decrement row subdivisions
+  +^C        ColDivInc           #Increment row subdivisions
+  ^c         ColDivDec           #Decrement row subdivisions
+  s          Subdivide           #Subdivide
+  r          SubdivideRows       #Subdivide rows
+  c          SubdivideCols       #Subdivide columns
+  z          Rectify             #Zap back to a rectangle
+  d          Decorations         #Toggle decorations
+  w          CircleWarp          #Make circle
+  1          SelectCorners       #Select corners
+  2          SelectMids          #Select middle controls
+  3          SelectEdgeMids      #Select edge controls
+  4          SelectVerticalEdgeMids#Select vertical edge controls
+  5          SelectHorizontalEdgeMids#Select horizontal edge controls
+  6          SelectAround        #Select points around current points
+  +V         SelectAllVertically #Select all vertically
+  v          SelectMoreVertically#Select next points vertically
+  +H         SelectAllHorizontally#Select all horizontally
+  h          SelectMoreHorizontally#Select next points horizontally
+area EngraverFillInterface
+  m          RenderMode          #Render mode
+  o          RecurseInc          #Increment screen recursion
+  +O         RecurseDec          #Decrement screen recursion
+  j          SmoothEdit          #Toggle smooth editing
+  b          MeshType            #Toggle mesh type
+  +B         MeshTypeR,          #Toggle mesh type in reverse
+  a          Select              #Select all or deselect
+  y          ConstrainY          #Constrain to vertical movements
+  x          ConstrainX          #Constrain to horizontal movements
+  +^R        RowDivInc           #Increment row subdivisions
+  ^r         RowDicDec           #Decrement row subdivisions
+  +^C        ColDivInc           #Increment row subdivisions
+  ^c         ColDivDec           #Decrement row subdivisions
+  s          Subdivide           #Subdivide
+  r          SubdivideRows       #Subdivide rows
+  c          SubdivideCols       #Subdivide columns
+  z          Rectify             #Zap back to a rectangle
+  d          Decorations         #Toggle decorations
+  w          CircleWarp          #Make circle
+  1          SelectCorners       #Select corners
+  2          SelectMids          #Select middle controls
+  3          SelectEdgeMids      #Select edge controls
+  4          SelectVerticalEdgeMids#Select vertical edge controls
+  5          SelectHorizontalEdgeMids#Select horizontal edge controls
+  6          SelectAround        #Select points around current points
+  +V         SelectAllVertically #Select all vertically
+  v          SelectMoreVertically#Select next points vertically
+  +H         SelectAllHorizontally#Select all horizontally
+  h          SelectMoreHorizontally#Select next points horizontally
+  m          SwitchMode          #Switch edit mode
+  +M         SwitchModeR         #Switch to previous edit mode
+  f          ExportSvg           #Export Svg
+  +F         ExportSnapshot      #Export snapshot
+  r          RotateDir           #Rotate default line direction
+  +R         RotateDirR          #Rotate default line direction
+  s          SpacingInc          #Increase default spacing
+  +S         SpacingDec          #Decrease default spacing
+  ^r         ResolutionInc       #Increase default resolution
+  +^R        ResolutionDec       #Decrease default resolution
+  +^:        MorePoints          #Subdivide all lines to have more sample points
+  p          ShowPoints          #Toggle showing sample points
+  +P         ShowPointsN         #Toggle showing sample point numbers
+  c          TogglePanel         #Toggle showing control panel
+  g          ToggleGrow          #Toggle grow mode
+  w          ToggleWarp          #Toggle warping when modifying mesh
+  ]          ToggleShowTrace     #Toggle showing the trace object
+  d          ToggleDir           #Toggle showing direction map
+  ^d         LoadDir             #Load a normal map for direction
+  PageDown   NextGroup           #Next group
+  PageUp     PreviousGroup       #Previous group
+  Left       NextFillType        #Switch to next fill type
+  Right      PreviousFillType    #Switch to previous fill type
+  1          ToggleTracePanel    #Toggle trace panel
+  2          ToggleDashPanel     #Toggle dash panel
+  3          ToggleDirPanel      #Toggle direction panel
+  4          ToggleSpacingPanel  #Toggle spacing panel
+  l          ToggleLinked        #Toggle if all are linked or unlinked
+  +L         ToggleGroupLinked   #Toggle if all in group are linked or not
+  ^l         ToggleCurLinked     #Toggle current group being linked
+area CloneInterface
+  Right      NextTiling          #Select next tiling
+  Left       PreviousTiling      #Select previous tiling
+  Up         NextBasecell        #Select next base cell
+  Down       PreviousBasecell    #Select previous base cell
+  l          ToggleLines         #Toggle rendering cell lines
+  Enter      ToggleRender        #Toggle rendering
+  p          TogglePreview       #Toggle preview of lines
+  o          ToggleOrientations  #Toggle preview of orientations
+  ^e         Edit                #Edit
+  s          Select              #Select tile mode
+  x          FillOrStroke        #Toggle sending color to fill or stroke
+area PaperInterface
+  a          Select              #Select or deselect all
+  d          Decs                #Toggle decorations
+  Bksp       Delete              #Delete selected
+  Del        Delete              #Delete selected
+  o          Rectify             #Make the axes horizontal and vertical
+  r          Rotate              #Rotate selected by 90 degrees
+  +R         RotateCC            #Rotate selected by 90 degrees in the other direction
+area NodeInterface
+  space      Center              #Center
+  +space     CenterSelecetd      #Center Selected
+  ^g         GroupNodes          #Group Nodes
+  +^G        UngroupNodes        #Ungroup Nodes
+  +A         AddNode             #Add Node
+  Bksp       DeleteNode          #Delete Node
+  Del        DeleteNode          #Delete Node
+  c          ToggleCollapse      #ToggleCollapse
+  p          TogglePreview       #TogglePreview
+  f          Frame               #Frame Selected
+  +F         Unframe             #Remove connected frame
+  Tab        EditGroup           #Toggle Edit Group
+  +Tab       LeaveGroup          #Leave Group
+  e          ThreadControls      #Thread controls
+  ^f         Find                #Find a node
+  +^f        FindNext            #Find next node
+  +D         Duplicate           #Duplicate
+  o          NoOverlap           #NoOverlap
+  g          ArrangeGrid         #Arrange in a grid
+  h          ArrangeRow          #Arrange in a row
+  v          ArrangeCol          #Arrange in a column
+  s          SaveNodes           #Save Nodes
+  l          LoadNodes           #Load Nodes
+area ObjectFilterInterface
+  r          Refresh             #Force a refresh
+area DelauneyInterface
+  n          ToggleNumbers       #Toggle numbers
+  a          ToggleArrows        #Toggle arrows
+  l          ToggleLines         #Toggle lines
+  c          StyleTarget         #Change target for color and line width changes
+  w          Thicken             #Thicken style target
+  +W         Thin                #Thin style target
+  f          FileOut             #Export this point set to a file
+  i          FileIn              #Import a point set from a file
+area GraphicalShell
+  /          Activate            #Turn on the prompt, if it was off.
+  +^Up       ToggleGravity       #Toggle placement of input bar, top or bottom
+  +^Down     ToggleGravity       #Toggle placement of input bar, top or bottom
