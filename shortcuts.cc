@@ -644,6 +644,7 @@ int ImportInkscape(const char *file)
 	makestr(manager->setfile, file);
 	makestr(manager->setname, "Inkscape");
 	Laxkit::ShortcutHandler *handler = new Laxkit::ShortcutHandler("Inkscape"); 
+	Utf8String scratch;
 
 	int actionnumber = 0;
 	const char *name, *value;
@@ -665,6 +666,7 @@ int ImportInkscape(const char *file)
 				unsigned int mods = 0;
 				const char *desc = nullptr;
 				bool display = false;
+				scratch.Clear();
 
 				Attribute *att2 = att->attributes.e[c]->attributes.e[c2];
 				for (int c3=0; c3<att2->attributes.n; c3++) {
@@ -682,6 +684,15 @@ int ImportInkscape(const char *file)
 
 					} else if (!strcmp(name, "action")) {
 						desc = value;
+						scratch = desc;
+						for (int c4=1; c4<scratch.Bytes(); c4++) {
+							char b = scratch.byte(c4);
+							char b2 = scratch.byte(c4-1);
+							if (isupper(b) && islower(b2)) {
+								scratch.InsertAt(" ", c4);
+								c4++;
+							}
+						}
 
 					} else if (!strcmp(name, "display")) {
 						display = BooleanAttribute(value);
@@ -689,11 +700,11 @@ int ImportInkscape(const char *file)
 				}
 
 				if (ch != 0) {
-					handler->Add(actionnumber++, ch,mods,0, desc, desc,NULL,0);
+					handler->Add(actionnumber++, ch,mods,0, scratch.c_str(), scratch.c_str(), NULL,0);
 					int i = handler->FindShortcutIndex(ch,mods,0);
 					handler->Shortcut(i)->info1 = display;
 				} else {
-					handler->AddAction(actionnumber++, desc, desc, nullptr, 0,0);
+					handler->AddAction(actionnumber++, scratch.c_str(), scratch.c_str(), nullptr, 0,0);
 				}
 			}
 		}
@@ -722,6 +733,8 @@ int ExportInkscape(const char *file)
 		cerr << "Warning!! Exporting to Inkscape key format, but more than one shortcut area!" << endl;
 	}
 
+	Utf8String scratch;
+
 	for (int c=0; c<manager->shortcuts.n; c++) {
 		ShortcutDefs  *s = manager->shortcuts.e[c]->Shortcuts();
 	    WindowActions *a = manager->shortcuts.e[c]->Actions();
@@ -740,7 +753,9 @@ int ExportInkscape(const char *file)
 
 			LaxToXlibKey(keyname, s->e[c2]->keys->key);
 
-			fprintf(f,"  <bind action=\"%s\" key=\"%s\" modifiers=\"", aa->description, keyname );
+			scratch = aa->description;
+			scratch.Replace("", " ", true);
+			fprintf(f,"  <bind action=\"%s\" key=\"%s\" modifiers=\"", scratch.c_str(), keyname);
 
 			int n=0;
 			if (s->e[c2]->keys->state & ShiftMask)   { n++; fputs("Shift", f); }
@@ -1213,12 +1228,12 @@ int main(int argc,char **argv)
 	fclose(f);
 
 	const char *default_scribus  = "~/.config/";
-	const char *default_blender  = "~/.config/";
 	const char *default_gimp     = "~/.config/";
 	const char *default_inkscape = "~/.config/";
 	const char *default_krita    = "~/.config/";
 	const char *default_laidout  = "~/.config/laidout/0.097.1/default.keys";
-	const char *default_godot    = "~/.config/godot/editor_settings-3.tres";
+	//const char *default_blender  = "~/.config/";
+	//const char *default_godot    = "~/.config/godot/editor_settings-3.tres";
 
 
 	string default_context;
